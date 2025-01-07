@@ -2,11 +2,14 @@
   "name": "nxt-pp",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Montegrand.github.io/nextPP/",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build": "next build && next export",
+    "predeploy": "npm run build",
+    "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "react": "^19.0.0",
